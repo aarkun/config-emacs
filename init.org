@@ -377,6 +377,7 @@ Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix f
 The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be used within LSP Mode:
 - [[* Bash][Bash]]
 - [[* Java][Java]]
+- [[* YAML][YAML]]
 
 *Note*: It is necessary, that [[https://nodejs.org/][Node.js]] is set up and that the command ~npm i -g <language-server>~ can be executed!
 #+begin_src emacs-lisp
@@ -387,6 +388,7 @@ The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]
     :hook (
 	   (sh-mode . lsp)
 	   (java-mode . lsp)
+	   (yaml-mode . lsp)
 	   ))
 #+end_src
 
@@ -411,3 +413,6 @@ Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have lo
 #+begin_src emacs-lisp
   (use-package lsp-java)
 #+end_src
+
+*** YAML
+[[https://emacs-lsp.github.io/lsp-mode/page/lsp-yaml/][YAML LSP support]] requires an installation of https://github.com/redhat-developer/yaml-language-server, which is done by registering the ~lsp~ command to the ~yaml-mode~ in a hook.
