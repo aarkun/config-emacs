@@ -107,6 +107,7 @@
 (use-package adoc-mode)
 (use-package gnuplot)
 (use-package lua-mode)
+(use-package robot-mode)
 (use-package lsp-mode
   :custom
   (lsp-keymap-prefix "C-c l")

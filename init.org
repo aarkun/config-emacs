@@ -371,6 +371,12 @@ Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
   (use-package lua-mode)
 #+end_src
 
+** Use Robot
+Install [[https://github.com/kopoli/robot-mode][robot-mode.el]]:
+#+begin_src emacs-lisp
+  (use-package robot-mode)
+#+end_src
+
 * Use LSP Mode
 Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix for LSP commands to /C-c l/. Integration with [[* Use /which-key/][which-key]] seems to work out of the box, so nothing is configured for it.
 
