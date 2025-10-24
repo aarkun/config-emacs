@@ -121,3 +121,4 @@
   :commands lsp-ivy-workspace-symbol
   )
 (use-package lsp-java)
+(use-package pandoc-mode)

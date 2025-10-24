@@ -422,3 +422,11 @@ Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have lo
 
 *** YAML
 [[https://emacs-lsp.github.io/lsp-mode/page/lsp-yaml/][YAML LSP support]] requires an installation of https://github.com/redhat-developer/yaml-language-server, which is done by registering the ~lsp~ command to the ~yaml-mode~ in a hook.
+
+* Use Pandoc-mode
+Add minor mode [[https://joostkremers.github.io/pandoc-mode/][Pandoc-mode]] to interact with [[https://pandoc.org][Pandoc]] from within Emacs:
+#+begin_src emacs-lisp
+  (use-package pandoc-mode)
+#+end_src
+
+No automatic registration with other modes are enabled.
