@@ -385,7 +385,7 @@ The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]
 - [[* Java][Java]]
 - [[* YAML][YAML]]
 
-*Note*: It is necessary, that [[https://nodejs.org/][Node.js]] is set up and that the command ~npm i -g <language-server>~ can be executed!
+*Note*: It is necessary, that [[https://nodejs.org/][Node.js]] in version 20 or greater or equla than 22 is set up and that the command ~npm i -g <language-server>~ can be executed!
 #+begin_src emacs-lisp
   (use-package lsp-mode
     :custom
