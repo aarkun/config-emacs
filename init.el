@@ -108,6 +108,7 @@
 (use-package gnuplot)
 (use-package lua-mode)
 (use-package robot-mode)
+(use-package pandoc-mode)
 (use-package lsp-mode
   :custom
   (lsp-keymap-prefix "C-c l")
@@ -121,4 +122,3 @@
   :commands lsp-ivy-workspace-symbol
   )
 (use-package lsp-java)
-(use-package pandoc-mode)
