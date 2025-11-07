@@ -434,4 +434,3 @@ Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have lo
 *** Lua
 [[https://emacs-lsp.github.io/lsp-mode/page/lsp-lua-language-server/][Lua LSP support]] requires an installation of https://github.com/LuaLS/lua-language-server, which is done by registering the ~lsp~ command to the [[* Use Lua-mode][Lua-mode]] in a hook.
 
-No automatic registration with other modes are enabled.
