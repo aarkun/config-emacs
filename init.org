@@ -383,6 +383,16 @@ Add minor mode [[https://joostkremers.github.io/pandoc-mode/][Pandoc-mode]] to i
   (use-package pandoc-mode)
 #+end_src
 
+** Use mermaid-mode
+Install [[https://github.com/abrochard/mermaid-mode][mermaid-mode]] and set the location of =mmdc= to the right path. Resolution of =~= is not really supported by org-babel. So the absolute path is resolved with ~file-truename~:
+#+begin_src emacs-lisp
+  (use-package mermaid-mode
+    :custom
+    (mermaid-mmdc-location
+     (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc"))
+    )
+#+end_src
+
 * Use LSP Mode
 Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix for LSP commands to /C-c l/. Integration with [[* Use /which-key/][which-key]] seems to work out of the box, so nothing is configured for it.
 

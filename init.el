@@ -109,6 +109,11 @@
 (use-package lua-mode)
 (use-package robot-mode)
 (use-package pandoc-mode)
+(use-package mermaid-mode
+  :custom
+  (mermaid-mmdc-location
+   (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc"))
+  )
 (use-package lsp-mode
   :custom
   (lsp-keymap-prefix "C-c l")
