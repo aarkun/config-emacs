@@ -393,6 +393,12 @@ Install [[https://github.com/abrochard/mermaid-mode][mermaid-mode]] and set the 
     )
 #+end_src
 
+** Use go-template-mode
+Install [[https://codeberg.org/rch/go-template-mode][go-template-mode]]:
+#+begin_src emacs-lisp
+  (use-package go-template-mode)
+#+end_src
+
 * Use LSP Mode
 Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix for LSP commands to /C-c l/. Integration with [[* Use /which-key/][which-key]] seems to work out of the box, so nothing is configured for it.
 

@@ -114,6 +114,7 @@
   (mermaid-mmdc-location
    (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc"))
   )
+(use-package go-template-mode)
 (use-package lsp-mode
   :custom
   (lsp-keymap-prefix "C-c l")
