@@ -115,6 +115,16 @@
    (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc"))
   )
 (use-package go-template-mode)
+(defun alk/go-template-helper-mode-enable()
+  (when (and buffer-file-name
+	     (string-match-p
+	      (rx "/templates/" (* any) "." (or "yaml") eos)
+	      buffer-file-name))
+    (go-template-helper-mode 1)))
+
+(use-package go-template-helper-mode
+  :hook
+  (yaml-mode . alk/go-template-helper-mode-enable))
 (use-package lsp-mode
   :custom
   (lsp-keymap-prefix "C-c l")

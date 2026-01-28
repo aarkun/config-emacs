@@ -399,6 +399,21 @@ Install [[https://codeberg.org/rch/go-template-mode][go-template-mode]]:
   (use-package go-template-mode)
 #+end_src
 
+** Use go-template-helper-mode
+Install [[https://codeberg.org/rch/go-template-helper-mode][go-template-helper-mode]] for editing Helm charts, which means, the file is located in a directory =templates/= and ends with =.yaml=:
+#+begin_src emacs-lisp
+  (defun alk/go-template-helper-mode-enable()
+    (when (and buffer-file-name
+	       (string-match-p
+		(rx "/templates/" (* any) "." (or "yaml") eos)
+		buffer-file-name))
+      (go-template-helper-mode 1)))
+
+  (use-package go-template-helper-mode
+    :hook
+    (yaml-mode . alk/go-template-helper-mode-enable))
+#+end_src
+
 * Use LSP Mode
 Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix for LSP commands to /C-c l/. Integration with [[* Use /which-key/][which-key]] seems to work out of the box, so nothing is configured for it.
 
