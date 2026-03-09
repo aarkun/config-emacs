@@ -54,7 +54,8 @@
   :bind-keymap ("C-c p" . projectile-command-map))
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
-(use-package magit)
+(use-package magit
+  :hook (magit-status-mode . turn-on-visual-line-mode))
 (use-package flycheck
   :init (global-flycheck-mode))
 (use-package ediff

@@ -190,9 +190,10 @@ Integrate Projectile with [[* Use /counsel/][Counsel]]:
 #+end_src
 
 * Use Magit
-Install [[https://magit.vc/][Magit]] to have a nice Git integration:
+Install [[https://magit.vc/][Magit]] to have a nice Git integration. Also enable Visual line mode for Magit status mode, to have line wraps for long lines as a default:
 #+begin_src emacs-lisp
-  (use-package magit)
+  (use-package magit
+    :hook (magit-status-mode . turn-on-visual-line-mode))
 #+end_src
 
 * Use Flycheck
