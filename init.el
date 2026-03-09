@@ -56,7 +56,6 @@
   :config (counsel-projectile-mode))
 (use-package magit)
 (use-package flycheck
-  :ensure t
   :init (global-flycheck-mode))
 (use-package ediff
   :defer t

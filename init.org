@@ -201,7 +201,6 @@ Install Flycheck and initialize it, to enable always syntax checking with Flyche
 *Note*: For optimal Bash support, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
 #+begin_src emacs-lisp
   (use-package flycheck
-    :ensure t
     :init (global-flycheck-mode))
 #+end_src
 
