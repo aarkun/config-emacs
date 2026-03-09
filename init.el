@@ -81,7 +81,6 @@
   (org-plantuml-jar-path plantuml-jar-path)
   (org-babel-load-languages
    '((emacs-lisp . t)
-     (org . t)
      (plantuml . t)
      (shell . t)))
   :config

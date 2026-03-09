@@ -280,7 +280,6 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     (org-plantuml-jar-path plantuml-jar-path)
     (org-babel-load-languages
      '((emacs-lisp . t)
-       (org . t)
        (plantuml . t)
        (shell . t)))
     :config
