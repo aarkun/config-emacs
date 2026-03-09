@@ -245,19 +245,27 @@ Use 2 spaces for indentation of JavaScript and JSON files:
     :custom (js-indent-level 2))
 #+end_src
 
-** Use Org Mode
+** Use Org mode
+Several adjustments are done for Org mode:
+
 *** Agenda files
-The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: ~$HOME/.emacs.d~). The file ~org-agenda-files~ should like the following example:
+The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: =$HOME/.emacs.d=). The file =org-agenda-files= should look  like the following example:
 #+begin_example
 ~/Path to 1st directory/agenda file 1
 ~/Path to 1st directory/agenda file 2
 ~/Path to 2nd directory/agenda file 1
 ...
 #+end_example
-If the file does not exist, it is created during startup.
+If the file does not exist, it is created empty during startup.
 
-*** Enable Visual Line Mode
-Since Org mode is for editing texts, visual line mode with word wrap is enabled:
+*** Add evaluation of shell codeblocks
+To enabling evaluation of ~shell~ codeblocks within Org files, like described in the [[https://orgmode.org/guide/Working-with-Source-Code.html#Evaluating-code-blocks-1][Org manual]], they have to be added to =org-babel-load-languages=.
+
+*** Enable Visual Line mode
+Since Org mode is for editing texts, Visual Line mode with word wrap is enabled.
+
+*** Enable Flyspell mode
+Enable Flyspell mode for spell checking in Org files.
 
 *** Integrate with PlantUML
 Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html][PlantUML Code Blocks in Babel on Org Mode]] and [[https://plantuml.com/emacs][Integration with Emacs on PlantUML]]:
@@ -278,7 +286,8 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     (let ((filename org-agenda-files))
       (if (not (file-exists-p filename))
 	  (make-empty-file filename)))
-    :hook (org-mode . visual-line-mode))
+    :hook ((org-mode . turn-on-visual-line-mode)
+	   (org-mode . turn-on-flyspell)))
 #+end_src
 
 ** Use CSV Mode
