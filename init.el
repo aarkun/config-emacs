@@ -73,6 +73,8 @@
   (ediff-fine-diff-A ((t (:extend t :background "#660000"))))
   (ediff-fine-diff-B ((t (:extend t :background "#006600"))))
   (ediff-fine-diff-C ((t (:extend t :background "#666600")))))
+(use-package js
+  :custom (js-indent-level 2))
 (use-package org
   :custom
   (org-agenda-files (concat user-emacs-directory "org-agenda-files"))

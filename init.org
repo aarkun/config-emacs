@@ -237,6 +237,14 @@ Make some adjustment to the forground colors to increase readability on dark the
 #+end_src
 
 * Editing modes
+
+** Customize JavaScript major mode
+Use 2 spaces for indentation of JavaScript and JSON files:
+#+begin_src emacs-lisp
+  (use-package js
+    :custom (js-indent-level 2))
+#+end_src
+
 ** Use Org Mode
 *** Agenda files
 The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: ~$HOME/.emacs.d~). The file ~org-agenda-files~ should like the following example:
