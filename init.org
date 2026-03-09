@@ -346,7 +346,7 @@ Install [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]]:
 #+end_src
 
 ** Use json-mode
-Install [[https://github.com/json-emacs/json-mode][json-mode]]:
+To have better syntax highlighting for JSON files, install [[https://github.com/json-emacs/json-mode][json-mode]]:
 #+begin_src emacs-lisp
   (use-package json-mode)
 #+end_src
