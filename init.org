@@ -3,7 +3,8 @@
 :END:
 
 * Custom set configurations
-Variables or faces can be set by [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Customization.html][Emacs Customize interface]]. Customisation shall be set explicitly in this file. Therefore, the following code blocks should always be empty:
+Variables or faces can be set by [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Customization.html][Emacs Customize interface]]. Customization shall be set explicitly in this file. Therefore, the following code blocks should always be empty:
+
 #+begin_example emacs-lisp
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
