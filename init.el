@@ -36,7 +36,9 @@
   :config
   (ivy-mode t)
   (counsel-mode t)
-  )
+  :diminish
+  counsel-mode
+  ivy-mode)
 (use-package ivy-rich
   :config (ivy-rich-mode t))
 (use-package helpful
