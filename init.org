@@ -126,6 +126,15 @@ To clean up the mode-line, [[https://github.com/emacsmirror/diminish][diminish]]
   (use-package diminish)
 #+end_src
 
+* Hide built-in minor modes in the mode-line
+The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Revert.html][Auto Revert mode]] and the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html][Visual Line mode]] are built-in minor modes, which shall be hidden in the mode-line, because they offers no functionality. As built-in modes they are diminished using the package ~emacs~:
+#+begin_src emacs-lisp
+  (use-package emacs
+    :diminish
+    auto-revert-mode
+    visual-line-mode)
+#+end_src
+
 * Customize EasyPG
 Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html][EasyPG]], like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
 #+begin_src emacs-lisp

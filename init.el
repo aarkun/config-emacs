@@ -19,6 +19,10 @@
 (use-package gnu-elpa-keyring-update
   :config  (setq package-check-signature 'allow-unsigned))
 (use-package diminish)
+(use-package emacs
+  :diminish
+  auto-revert-mode
+  visual-line-mode)
 (use-package epg
   :custom
   (epg-pinentry-mode 'loopback))
