@@ -40,6 +40,7 @@
   counsel-mode
   ivy-mode)
 (use-package ivy-rich
+  :after ivy
   :config (ivy-rich-mode t))
 (use-package helpful
   :commands

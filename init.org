@@ -166,9 +166,10 @@ Install [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]
     ivy-mode)
 #+end_src
 
-Install [[https://github.com/Yevgnen/ivy-rich][ivy-rich]] and activate it, to have more actions with /M-o/ and better UI in the minibuffer for Ivy and Counsel completions:
+Install [[https://github.com/Yevgnen/ivy-rich][ivy-rich]] and activate it, to have more actions with /M-o/ and better UI in the minibuffer for Ivy and Counsel completions. This must be loaded, after Ivy was loaded:
 #+begin_src emacs-lisp
   (use-package ivy-rich
+    :after ivy
     :config (ivy-rich-mode t))
 #+end_src
 
