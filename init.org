@@ -144,14 +144,15 @@ Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html
 #+end_src
 
 * Use which-key
-Install and activate [[https://github.com/justbur/emacs-which-key][which-key]] minor mode to display current awailable key bindings while typing:
+Install and activate [[https://github.com/justbur/emacs-which-key][which-key]] minor mode to display current awailable key bindings while typing. This minor mode is hidden in the mode-line, because it offers no functionality:
 #+begin_src emacs-lisp
   (use-package which-key
-    :config (which-key-mode t))
+    :config (which-key-mode t)
+    :diminish)
 #+end_src
 
 * Use Counsel, Ivy and Swiper
-Install [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]] along with [[https://github.com/abo-abo/swiper?tab=readme-ov-file#ivy][Ivy]] and [[https://github.com/abo-abo/swiper?tab=readme-ov-file#swiper][Swiper]]. Set keys for invoking search with Swiper to /C-s/ and switching buffer with Counsel and Swiper to /C-x b/. Activate Ivy and Counsel minor mode globally:
+Install [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]] along with [[https://github.com/abo-abo/swiper?tab=readme-ov-file#ivy][Ivy]] and [[https://github.com/abo-abo/swiper?tab=readme-ov-file#swiper][Swiper]]. Set keys for invoking search with Swiper to /C-s/ and switching buffer with Counsel and Swiper to /C-x b/. Activate Ivy and Counsel minor mode globally, but hide them in the mode-line:
 #+begin_src emacs-lisp
   (use-package counsel
     :bind

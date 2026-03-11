@@ -27,7 +27,8 @@
   :custom
   (epg-pinentry-mode 'loopback))
 (use-package which-key
-  :config (which-key-mode t))
+  :config (which-key-mode t)
+  :diminish)
 (use-package counsel
   :bind
   ("C-s" . swiper-isearch)
