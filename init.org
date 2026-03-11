@@ -120,6 +120,12 @@ Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-k
   (setq package-check-signature nil)
 #+end_src
 
+* Enable Diminish
+To clean up the mode line, [[https://github.com/emacsmirror/diminish][diminish]] is installed and can be used for certain minor modes. The Installation is done, like described in the [[https://www.gnu.org/software/emacs/manual/html_node/use-package/Diminish.html][Emacs manual]]:
+#+begin_src emacs-lisp
+  (use-package diminish)
+#+end_src
+
 * Customize EasyPG
 Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html][EasyPG]], like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
 #+begin_src emacs-lisp
