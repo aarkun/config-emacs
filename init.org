@@ -195,11 +195,12 @@ Install [[https://github.com/Wilfred/helpful][Helpful]] to enhance Emacs help wi
 #+end_src
 
 * Use Projectile
-Install [[https://github.com/bbatsov/projectile][Projectile]] and set the key prefix for Projectile commands to /C-c p/:
+Install [[https://github.com/bbatsov/projectile][Projectile]] and set the key prefix for Projectile commands to /C-c p/. All commands are bound to keys, so the entry in the mode-line can be hidden:
 #+begin_src emacs-lisp
   (use-package projectile
     :config (projectile-mode t)
-    :bind-keymap ("C-c p" . projectile-command-map))
+    :bind-keymap ("C-c p" . projectile-command-map)
+    :diminish)
 #+end_src
 
 Integrate Projectile with [[* Use /counsel/][Counsel]]:
