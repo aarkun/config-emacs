@@ -21,8 +21,10 @@
 (use-package diminish)
 (use-package emacs
   :diminish
-  auto-revert-mode
   visual-line-mode)
+(use-package autorevert
+  :diminish
+  auto-revert-mode)
 (use-package epg
   :custom
   (epg-pinentry-mode 'loopback))

@@ -127,12 +127,19 @@ To clean up the mode-line, [[https://github.com/emacsmirror/diminish][diminish]]
 #+end_src
 
 * Hide built-in minor modes in the mode-line
-The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Revert.html][Auto Revert mode]] and the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html][Visual Line mode]] are built-in minor modes, which shall be hidden in the mode-line, because they offers no functionality. As built-in modes they are diminished using the package ~emacs~:
+The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html][Visual Line mode]] is a built-in minor modes, which shall be hidden in the mode-line, because it offers no functionality. As built-in modes it is diminished using the package ~emacs~:
 #+begin_src emacs-lisp
   (use-package emacs
     :diminish
-    auto-revert-mode
     visual-line-mode)
+#+end_src
+
+* Customize Auto Revert
+The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Revert.html][Auto Revert mode]] shall be hidden in the mode-line, because they offers no functionality:
+#+begin_src emacs-lisp
+  (use-package autorevert
+    :diminish
+    auto-revert-mode)
 #+end_src
 
 * Customize EasyPG
