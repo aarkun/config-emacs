@@ -224,11 +224,13 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration. Also enable
 * Use Flycheck
 Use [[https://www.flycheck.org][Flycheck]] over [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html][Flymake]], since it seems having more features according to [[https://www.flycheck.org/en/latest/user/flycheck-versus-flymake.html][this comparison]].
 Install Flycheck and initialize it, to enable always syntax checking with Flycheck.
+Flycheck is disabled for ~org-mode~.
 
 *Note*: For optimal Bash support, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
 #+begin_src emacs-lisp
   (use-package flycheck
-    :init (global-flycheck-mode))
+    :init (global-flycheck-mode)
+    :custom (flycheck-global-modes '(not org-mode)))
 #+end_src
 
 * Customize Ediff

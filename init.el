@@ -70,7 +70,8 @@
 (use-package magit
   :hook (magit-status-mode . turn-on-visual-line-mode))
 (use-package flycheck
-  :init (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :custom (flycheck-global-modes '(not org-mode)))
 (use-package ediff
   :defer t
   :custom-face
