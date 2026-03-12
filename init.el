@@ -21,14 +21,11 @@
   (package-check-signature 'allow-unsigned))
 (use-package diminish)
 (use-package emacs
-  :diminish
-  visual-line-mode)
+  :diminish visual-line-mode)
 (use-package autorevert
-  :diminish
-  auto-revert-mode)
+  :diminish auto-revert-mode)
 (use-package epg
-  :custom
-  (epg-pinentry-mode 'loopback))
+  :custom (epg-pinentry-mode 'loopback))
 (use-package which-key
   :config (which-key-mode t)
   :diminish)
@@ -101,8 +98,9 @@
   (let ((filename org-agenda-files))
     (if (not (file-exists-p filename))
 	(make-empty-file filename)))
-  :hook ((org-mode . turn-on-visual-line-mode)
-	 (org-mode . turn-on-flyspell)))
+  :hook
+  ((org-mode . turn-on-visual-line-mode)
+   (org-mode . turn-on-flyspell)))
 (use-package csv-mode)
 (use-package yaml-mode)
 (use-package bats-mode)
@@ -111,8 +109,7 @@
   (plantuml-default-exec-mode 'jar)
   (plantuml-indent-level 2)
   (plantuml-jar-path "~/opt/plantuml.jar")
-  :config
-  (setq plantuml-output-type "png"))
+  :config (setq plantuml-output-type "png"))
 (use-package go-mode)
 (use-package markdown-mode)
 (use-package groovy-mode)
@@ -126,10 +123,8 @@
 (use-package robot-mode)
 (use-package pandoc-mode)
 (use-package mermaid-mode
-  :custom
-  (mermaid-mmdc-location
-   (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc"))
-  )
+  :custom (mermaid-mmdc-location
+	   (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc")))
 (use-package go-template-mode)
 (defun alk/go-template-helper-mode-enable()
   (when (and buffer-file-name
@@ -139,19 +134,15 @@
     (go-template-helper-mode 1)))
 
 (use-package go-template-helper-mode
-  :hook
-  (yaml-mode . alk/go-template-helper-mode-enable))
+  :hook (yaml-mode . alk/go-template-helper-mode-enable))
 (use-package lsp-mode
-  :custom
-  (lsp-keymap-prefix "C-c l")
+  :custom (lsp-keymap-prefix "C-c l")
   :commands lsp
-  :hook (
-	 (sh-mode . lsp)
-	 (java-mode . lsp)
-	 (yaml-mode . lsp)
-	 (lua-mode . lsp)
-	 ))
+  :hook
+  ((sh-mode . lsp)
+   (java-mode . lsp)
+   (yaml-mode . lsp)
+   (lua-mode . lsp)))
 (use-package lsp-ivy
-  :commands lsp-ivy-workspace-symbol
-  )
+  :commands lsp-ivy-workspace-symbol)
 (use-package lsp-java)

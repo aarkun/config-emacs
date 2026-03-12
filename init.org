@@ -128,24 +128,21 @@ To clean up the mode-line, [[https://github.com/emacsmirror/diminish][diminish]]
 The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html][Visual Line mode]] is a built-in minor modes, which shall be hidden in the mode-line, because it offers no functionality. As built-in modes it is diminished using the package ~emacs~:
 #+begin_src emacs-lisp
   (use-package emacs
-    :diminish
-    visual-line-mode)
+    :diminish visual-line-mode)
 #+end_src
 
 * Customize Auto Revert
 The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Revert.html][Auto Revert mode]] shall be hidden in the mode-line, because they offers no functionality:
 #+begin_src emacs-lisp
   (use-package autorevert
-    :diminish
-    auto-revert-mode)
+    :diminish auto-revert-mode)
 #+end_src
 
 * Customize EasyPG
 Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html][EasyPG]], like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
 #+begin_src emacs-lisp
   (use-package epg
-    :custom
-    (epg-pinentry-mode 'loopback))
+    :custom (epg-pinentry-mode 'loopback))
 #+end_src
 
 * Use which-key
@@ -313,8 +310,9 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     (let ((filename org-agenda-files))
       (if (not (file-exists-p filename))
 	  (make-empty-file filename)))
-    :hook ((org-mode . turn-on-visual-line-mode)
-	   (org-mode . turn-on-flyspell)))
+    :hook
+    ((org-mode . turn-on-visual-line-mode)
+     (org-mode . turn-on-flyspell)))
 #+end_src
 
 ** Use CSV Mode
@@ -349,8 +347,7 @@ Install [[https://github.com/skuro/plantuml-mode][PlantUML mode]] without [[http
     (plantuml-default-exec-mode 'jar)
     (plantuml-indent-level 2)
     (plantuml-jar-path "~/opt/plantuml.jar")
-    :config
-    (setq plantuml-output-type "png"))
+    :config (setq plantuml-output-type "png"))
 #+end_src
 
 ** Use go-mode
@@ -431,10 +428,8 @@ Add minor mode [[https://joostkremers.github.io/pandoc-mode/][Pandoc-mode]] to i
 Install [[https://github.com/abrochard/mermaid-mode][mermaid-mode]] and set the location of =mmdc= to the right path. Resolution of =~= is not really supported by org-babel. So the absolute path is resolved with ~file-truename~:
 #+begin_src emacs-lisp
   (use-package mermaid-mode
-    :custom
-    (mermaid-mmdc-location
-     (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc"))
-    )
+    :custom (mermaid-mmdc-location
+	     (file-truename "~/.asdf/installs/nodejs/22.0.0/bin/mmdc")))
 #+end_src
 
 ** Use go-template-mode
@@ -454,8 +449,7 @@ Install [[https://codeberg.org/rch/go-template-helper-mode][go-template-helper-m
       (go-template-helper-mode 1)))
 
   (use-package go-template-helper-mode
-    :hook
-    (yaml-mode . alk/go-template-helper-mode-enable))
+    :hook (yaml-mode . alk/go-template-helper-mode-enable))
 #+end_src
 
 * Use LSP Mode
@@ -470,23 +464,20 @@ The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]
 *Note*: It is necessary, that [[https://nodejs.org/][Node.js]] in version 20 or greater or equals than 22 is set up and that the command ~npm i -g <language-server>~ can be executed!
 #+begin_src emacs-lisp
   (use-package lsp-mode
-    :custom
-    (lsp-keymap-prefix "C-c l")
+    :custom (lsp-keymap-prefix "C-c l")
     :commands lsp
-    :hook (
-	   (sh-mode . lsp)
-	   (java-mode . lsp)
-	   (yaml-mode . lsp)
-	   (lua-mode . lsp)
-	   ))
+    :hook
+    ((sh-mode . lsp)
+     (java-mode . lsp)
+     (yaml-mode . lsp)
+     (lua-mode . lsp)))
 #+end_src
 
 ** Ivy integration
 Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have local workspace symbols for auto-completion with Ivy:
 #+begin_src emacs-lisp
   (use-package lsp-ivy
-    :commands lsp-ivy-workspace-symbol
-    )
+    :commands lsp-ivy-workspace-symbol)
 #+end_src
 
 ** Language support
@@ -508,4 +499,3 @@ Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have lo
 
 *** Lua
 [[https://emacs-lsp.github.io/lsp-mode/page/lsp-lua-language-server/][Lua LSP support]] requires an installation of https://github.com/LuaLS/lua-language-server, which is done by registering the ~lsp~ command to the [[* Use Lua-mode][Lua-mode]] in a hook.
-
