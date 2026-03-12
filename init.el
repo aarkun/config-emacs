@@ -11,13 +11,14 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
 			 ("melpa" . "https://melpa.org/packages/")))
-(setq use-package-always-ensure t)
 (package-initialize)
 (unless package-archive-contents (package-refresh-contents))
 (unless (package-installed-p 'use-package) (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 (use-package gnu-elpa-keyring-update
-  :config  (setq package-check-signature 'allow-unsigned))
+  :custom
+  (use-package-always-ensure t)
+  (package-check-signature 'allow-unsigned))
 (use-package diminish)
 (use-package emacs
   :diminish

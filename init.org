@@ -82,12 +82,7 @@ Define the package archives to use:
 			   ("melpa" . "https://melpa.org/packages/")))
 #+end_src
 
-Ensure newly installed packages are downloaded and installed properly before running:
-#+begin_src emacs-lisp
-  (setq use-package-always-ensure t)
-#+end_src
-
-Initialise package variables:
+Initialize package variables:
 #+begin_src emacs-lisp
   (package-initialize)
 #+end_src
@@ -98,7 +93,7 @@ Refresh package cache if not done yet:
 #+end_src
 
 ** Use use-package
-Install [[https://github.com/jwiegley/use-package][use-package]], if not done yet:
+Install [[https://www.gnu.org/software/emacs/manual/html_node/use-package/index.html][use-package]], if not done yet:
 #+begin_src emacs-lisp
   (unless (package-installed-p 'use-package) (package-install 'use-package))
 #+end_src
@@ -108,11 +103,14 @@ Initialise use-package:
   (eval-when-compile (require 'use-package))
 #+end_src
 
-** Add Signature management
-Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-keyring-update]] to keep GPG keyring  or GNU ELPA up to date and keep the default behaviour:
+** Configure use-package
+1. Ensure newly installed packages are downloaded and installed properly before running.
+2. Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-keyring-update]] to keep GPG keyring or GNU ELPA up to date and keep the default behavior.
 #+begin_src emacs-lisp
   (use-package gnu-elpa-keyring-update
-    :config  (setq package-check-signature 'allow-unsigned))
+    :custom
+    (use-package-always-ensure t)
+    (package-check-signature 'allow-unsigned))
 #+end_src
 
 *Note*: If gnu-elpa-keyring-update cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
