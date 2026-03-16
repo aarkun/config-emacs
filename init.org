@@ -337,7 +337,7 @@ Install [[https://github.com/dougm/bats-mode][bats-mode]]:
 Install [[https://github.com/skuro/plantuml-mode][PlantUML mode]] without [[https://github.com/plantuml/plantuml-server][PlantUML Server]]:
 - The default execution mode is set to ~jar~, because communication to the server seems to be broken at this time.
 - Indentation level is set to 2.
-- The output type is set to ~png~, since SVG images are transparent and black lines are not seen in a preview window with black (or dark) background:
+- The output type is set to ~png~, since SVG images are transparent and black lines are not seen in a preview window with black (or dark) background.
 - The Plantuml JAR is set to the local ~plantuml.jar~
 
 *Note*: It is necessary, that a JRE is set up and that the command ~java~ can be executed! The variable ~plantuml-java-command~ is not customized to stay platform independent.
