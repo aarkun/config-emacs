@@ -273,7 +273,7 @@ Use 2 spaces for indentation of JavaScript and JSON files:
 ** Use Org mode
 Several adjustments are done for Org mode:
 
-*** Agenda files
+*** Define agenda files
 The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: =$HOME/.emacs.d=). The file =org-agenda-files= should look  like the following example:
 #+begin_example
 ~/Path to 1st directory/agenda file 1
