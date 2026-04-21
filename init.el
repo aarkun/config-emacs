@@ -98,9 +98,7 @@
   (let ((filename org-agenda-files))
     (if (not (file-exists-p filename))
 	(make-empty-file filename)))
-  :hook
-  ((org-mode . turn-on-visual-line-mode)
-   (org-mode . turn-on-flyspell)))
+  :hook (org-mode . turn-on-visual-line-mode))
 (use-package csv-mode)
 (use-package yaml-mode)
 (use-package bats-mode)

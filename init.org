@@ -1,3 +1,4 @@
+# -*- eval: (flyspell-prog-mode) -*-
 :PROPERTIES:
 :header-args:emacs-lisp: :tangle yes :padline no
 :END:
@@ -289,8 +290,21 @@ To enabling evaluation of ~shell~ codeblocks within Org files, like described in
 *** Enable Visual Line mode
 Since Org mode is for editing texts, Visual Line mode with word wrap is enabled.
 
-*** Enable Flyspell mode
-Enable Flyspell mode for spell checking in Org files.
+*** Flyspell mode
+Not all Org files need spell checking. So Flyspell mode should be activated specific for each Org files, by adding one of the following ~eval~ expressions as the first list:
+#+begin_src org
+  # -*- eval: (flyspell-mode) -*-
+#+end_src
+
+Or, if source is included:
+#+begin_src org
+  # -*- eval: (flyspell-prog-mode) -*-
+#+end_src
+
+To set a specific dictionary, the following line can be added as a comment:
+#+begin_src org
+  # Local IspellDict: en
+#+end_src
 
 *** Integrate with PlantUML
 Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html][PlantUML Code Blocks in Babel on Org Mode]] and [[https://plantuml.com/emacs][Integration with Emacs on PlantUML]]:
@@ -310,9 +324,7 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     (let ((filename org-agenda-files))
       (if (not (file-exists-p filename))
 	  (make-empty-file filename)))
-    :hook
-    ((org-mode . turn-on-visual-line-mode)
-     (org-mode . turn-on-flyspell)))
+    :hook (org-mode . turn-on-visual-line-mode))
 #+end_src
 
 ** Use CSV Mode
