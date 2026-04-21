@@ -221,7 +221,7 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration. Also enable
 * Use Flycheck
 Use [[https://www.flycheck.org][Flycheck]] over [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html][Flymake]], since it seems having more features according to [[https://www.flycheck.org/en/latest/user/flycheck-versus-flymake.html][this comparison]].
 Install Flycheck and initialize it, to enable always syntax checking with Flycheck.
-Flycheck is disabled for ~org-mode~.
+Flycheck is not needed in ~org-mode~. Source code snippets in Org mode should be edited in a separate buffer, in which the specific major mode with Flycheck is enabled again.
 
 *Note*: For optimal Bash support, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
 #+begin_src emacs-lisp
