@@ -285,7 +285,10 @@ The list of agenda files is specific to different environments and user accounts
 If the file does not exist, it is created empty during startup.
 
 *** Add evaluation of shell codeblocks
-To enabling evaluation of ~shell~ codeblocks within Org files, like described in the [[https://orgmode.org/guide/Working-with-Source-Code.html#Evaluating-code-blocks-1][Org manual]], they have to be added to =org-babel-load-languages=.
+To enable evaluation of ~shell~ codeblocks within Org files, like described in the [[https://orgmode.org/guide/Working-with-Source-Code.html#Evaluating-code-blocks-1][Org manual]], they have to be added to =org-babel-load-languages=.
+
+*** Add evaluation of Python codeblocks
+To enable evaluation of ~python~ codeblocks within Org files, like described in the [[https://orgmode.org/guide/Working-with-Source-Code.html#Evaluating-code-blocks-1][Org manual]], they have to be added to =org-babel-load-languages=.
 
 *** Enable Visual Line mode
 Since Org mode is for editing texts, Visual Line mode with word wrap is enabled.
@@ -319,7 +322,8 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     (org-babel-load-languages
      '((emacs-lisp . t)
        (plantuml . t)
-       (shell . t)))
+       (shell . t)
+       (python . t)))
     :config
     (let ((filename org-agenda-files))
       (if (not (file-exists-p filename))

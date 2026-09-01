@@ -93,7 +93,8 @@
   (org-babel-load-languages
    '((emacs-lisp . t)
      (plantuml . t)
-     (shell . t)))
+     (shell . t)
+     (python . t)))
   :config
   (let ((filename org-agenda-files))
     (if (not (file-exists-p filename))
