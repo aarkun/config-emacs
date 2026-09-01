@@ -264,11 +264,105 @@ Make some adjustment to the forground colors to increase readability on dark the
 
 * Editing modes
 
-** Customize JavaScript major mode
+** Use adoc-mode
+Install [[https://github.com/bbatsov/adoc-mode/][adoc-mode]]:
+#+begin_src emacs-lisp
+  (use-package adoc-mode)
+#+end_src
+
+** Use bats-mode
+Install [[https://github.com/dougm/bats-mode][bats-mode]]:
+#+begin_src emacs-lisp
+  (use-package bats-mode)
+#+end_src
+
+** Use CSV Mode
+Install [[https://elpa.gnu.org/packages/csv-mode.html][CSV Mode]]:
+#+begin_src emacs-lisp
+  (use-package csv-mode)
+#+end_src
+
+** Use docker-compose-mode
+Install [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]]:
+#+begin_src emacs-lisp
+  (use-package docker-compose-mode)
+#+end_src
+
+** Use dockerfile-mode
+Install [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]]:
+#+begin_src emacs-lisp
+  (use-package dockerfile-mode)
+#+end_src
+
+** Use Gnuplot for Emacs
+Install [[https://github.com/emacs-gnuplot/gnuplot][Gnuplot for Emacs]]:
+#+begin_src emacs-lisp
+  (use-package gnuplot)
+#+end_src
+
+*Note*: The mode is not associated to any files yet. Therefore it has to be started with ~M-x gnuplot-mode~ for the current buffer, or with ~M-x gnuplot-make-buffer~ in a new buffer.
+
+** Use go-mode
+Install [[https://github.com/dominikh/go-mode.el][go-mode]] further descriped in [[https://www.emacswiki.org/emacs/GoLangMode][Go Lang Mode]]:
+#+begin_src emacs-lisp
+  (use-package go-mode)
+#+end_src
+
+** Use go-template-mode
+Install [[https://codeberg.org/rch/go-template-mode][go-template-mode]]:
+#+begin_src emacs-lisp
+  (use-package go-template-mode)
+#+end_src
+
+** Use go-template-helper-mode
+Install [[https://codeberg.org/rch/go-template-helper-mode][go-template-helper-mode]] for editing Helm charts, which means, the file is located in a directory =templates/= and ends with =.yaml=:
+#+begin_src emacs-lisp
+  (defun alk/go-template-helper-mode-enable()
+    (when (and buffer-file-name
+	       (string-match-p
+		(rx "/templates/" (* any) "." (or "yaml") eos)
+		buffer-file-name))
+      (go-template-helper-mode 1)))
+
+  (use-package go-template-helper-mode
+    :hook (yaml-mode . alk/go-template-helper-mode-enable))
+#+end_src
+
+** Use groovy-mode
+Intall [[https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes][standalone groovy-mode]]:
+#+begin_src emacs-lisp
+  (use-package groovy-mode)
+#+end_src
+
+** Use JavaScript major mode
 Use 2 spaces for indentation of JavaScript and JSON files:
 #+begin_src emacs-lisp
   (use-package js
     :custom (js-indent-level 2))
+#+end_src
+
+** Use json-mode
+To have better syntax highlighting for JSON files, install [[https://github.com/json-emacs/json-mode][json-mode]]:
+#+begin_src emacs-lisp
+  (use-package json-mode)
+#+end_src
+
+** Use Lua-mode
+Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
+#+begin_src emacs-lisp
+  (use-package lua-mode)
+#+end_src
+
+** Use Markdown Mode
+Install [[https://jblevins.org/projects/markdown-mode/][Markdown Mode]]:
+#+begin_src emacs-lisp
+  (use-package markdown-mode)
+#+end_src
+
+** Use mermaid-mode
+Install [[https://github.com/abrochard/mermaid-mode][mermaid-mode]]:
+#+begin_src emacs-lisp
+  (use-package mermaid-mode)
 #+end_src
 
 ** Use Org mode
@@ -331,22 +425,10 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     :hook (org-mode . turn-on-visual-line-mode))
 #+end_src
 
-** Use CSV Mode
-Install [[https://elpa.gnu.org/packages/csv-mode.html][CSV Mode]]:
+** Use Pandoc-mode
+Add minor mode [[https://joostkremers.github.io/pandoc-mode/][Pandoc-mode]] to interact with [[https://pandoc.org][Pandoc]] from within Emacs:
 #+begin_src emacs-lisp
-  (use-package csv-mode)
-#+end_src
-
-** Use yaml-mode
-Install [[https://github.com/yoshiki/yaml-mode][yaml-mode]]:
-#+begin_src emacs-lisp
-  (use-package yaml-mode)
-#+end_src
-
-** Use bats-mode
-Install [[https://github.com/dougm/bats-mode][bats-mode]]:
-#+begin_src emacs-lisp
-  (use-package bats-mode)
+  (use-package pandoc-mode)
 #+end_src
 
 ** Use PlantUML mode
@@ -366,66 +448,10 @@ Install [[https://github.com/skuro/plantuml-mode][PlantUML mode]] without [[http
     :config (setq plantuml-output-type "png"))
 #+end_src
 
-** Use go-mode
-Install [[https://github.com/dominikh/go-mode.el][go-mode]] further descriped in [[https://www.emacswiki.org/emacs/GoLangMode][Go Lang Mode]]:
-#+begin_src emacs-lisp
-  (use-package go-mode)
-#+end_src
-
-** Use Markdown Mode
-Install [[https://jblevins.org/projects/markdown-mode/][Markdown Mode]]:
-#+begin_src emacs-lisp
-  (use-package markdown-mode)
-#+end_src
-
-** Use groovy-mode
-Intall [[https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes][standalone groovy-mode]]:
-#+begin_src emacs-lisp
-  (use-package groovy-mode)
-#+end_src
-
 ** Use PowerShell Mode
 Install [[https://github.com/jschaf/powershell.el][PowerShell Mode]]:
 #+begin_src emacs-lisp
   (use-package powershell)
-#+end_src
-
-** Use dockerfile-mode
-Install [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]]:
-#+begin_src emacs-lisp
-  (use-package dockerfile-mode)
-#+end_src
-
-** Use docker-compose-mode
-Install [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]]:
-#+begin_src emacs-lisp
-  (use-package docker-compose-mode)
-#+end_src
-
-** Use json-mode
-To have better syntax highlighting for JSON files, install [[https://github.com/json-emacs/json-mode][json-mode]]:
-#+begin_src emacs-lisp
-  (use-package json-mode)
-#+end_src
-
-** Use adoc-mode
-Install [[https://github.com/bbatsov/adoc-mode/][adoc-mode]]:
-#+begin_src emacs-lisp
-  (use-package adoc-mode)
-#+end_src
-
-** Use Gnuplot for Emacs
-Install [[https://github.com/emacs-gnuplot/gnuplot][Gnuplot for Emacs]]:
-#+begin_src emacs-lisp
-  (use-package gnuplot)
-#+end_src
-
-*Note*: The mode is not associated to any files yet. Therefore it has to be started with ~M-x gnuplot-mode~ for the current buffer, or with ~M-x gnuplot-make-buffer~ in a new buffer.
-
-** Use Lua-mode
-Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
-#+begin_src emacs-lisp
-  (use-package lua-mode)
 #+end_src
 
 ** Use Robot
@@ -434,36 +460,10 @@ Install [[https://github.com/kopoli/robot-mode][robot-mode.el]]:
   (use-package robot-mode)
 #+end_src
 
-** Use Pandoc-mode
-Add minor mode [[https://joostkremers.github.io/pandoc-mode/][Pandoc-mode]] to interact with [[https://pandoc.org][Pandoc]] from within Emacs:
+** Use yaml-mode
+Install [[https://github.com/yoshiki/yaml-mode][yaml-mode]]:
 #+begin_src emacs-lisp
-  (use-package pandoc-mode)
-#+end_src
-
-** Use mermaid-mode
-Install [[https://github.com/abrochard/mermaid-mode][mermaid-mode]]:
-#+begin_src emacs-lisp
-  (use-package mermaid-mode)
-#+end_src
-
-** Use go-template-mode
-Install [[https://codeberg.org/rch/go-template-mode][go-template-mode]]:
-#+begin_src emacs-lisp
-  (use-package go-template-mode)
-#+end_src
-
-** Use go-template-helper-mode
-Install [[https://codeberg.org/rch/go-template-helper-mode][go-template-helper-mode]] for editing Helm charts, which means, the file is located in a directory =templates/= and ends with =.yaml=:
-#+begin_src emacs-lisp
-  (defun alk/go-template-helper-mode-enable()
-    (when (and buffer-file-name
-	       (string-match-p
-		(rx "/templates/" (* any) "." (or "yaml") eos)
-		buffer-file-name))
-      (go-template-helper-mode 1)))
-
-  (use-package go-template-helper-mode
-    :hook (yaml-mode . alk/go-template-helper-mode-enable))
+  (use-package yaml-mode)
 #+end_src
 
 * Use LSP Mode

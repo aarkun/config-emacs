@@ -84,8 +84,30 @@
   (ediff-fine-diff-A ((t (:extend t :background "#660000"))))
   (ediff-fine-diff-B ((t (:extend t :background "#006600"))))
   (ediff-fine-diff-C ((t (:extend t :background "#666600")))))
+(use-package adoc-mode)
+(use-package bats-mode)
+(use-package csv-mode)
+(use-package docker-compose-mode)
+(use-package dockerfile-mode)
+(use-package gnuplot)
+(use-package go-mode)
+(use-package go-template-mode)
+(defun alk/go-template-helper-mode-enable()
+  (when (and buffer-file-name
+	     (string-match-p
+	      (rx "/templates/" (* any) "." (or "yaml") eos)
+	      buffer-file-name))
+    (go-template-helper-mode 1)))
+
+(use-package go-template-helper-mode
+  :hook (yaml-mode . alk/go-template-helper-mode-enable))
+(use-package groovy-mode)
 (use-package js
   :custom (js-indent-level 2))
+(use-package json-mode)
+(use-package lua-mode)
+(use-package markdown-mode)
+(use-package mermaid-mode)
 (use-package org
   :custom
   (org-agenda-files (concat user-emacs-directory "org-agenda-files"))
@@ -100,38 +122,16 @@
     (if (not (file-exists-p filename))
 	(make-empty-file filename)))
   :hook (org-mode . turn-on-visual-line-mode))
-(use-package csv-mode)
-(use-package yaml-mode)
-(use-package bats-mode)
+(use-package pandoc-mode)
 (use-package plantuml-mode
   :custom
   (plantuml-default-exec-mode 'jar)
   (plantuml-indent-level 2)
   (plantuml-jar-path "~/opt/plantuml.jar")
   :config (setq plantuml-output-type "png"))
-(use-package go-mode)
-(use-package markdown-mode)
-(use-package groovy-mode)
 (use-package powershell)
-(use-package dockerfile-mode)
-(use-package docker-compose-mode)
-(use-package json-mode)
-(use-package adoc-mode)
-(use-package gnuplot)
-(use-package lua-mode)
 (use-package robot-mode)
-(use-package pandoc-mode)
-(use-package mermaid-mode)
-(use-package go-template-mode)
-(defun alk/go-template-helper-mode-enable()
-  (when (and buffer-file-name
-	     (string-match-p
-	      (rx "/templates/" (* any) "." (or "yaml") eos)
-	      buffer-file-name))
-    (go-template-helper-mode 1)))
-
-(use-package go-template-helper-mode
-  :hook (yaml-mode . alk/go-template-helper-mode-enable))
+(use-package yaml-mode)
 (use-package lsp-mode
   :custom (lsp-keymap-prefix "C-c l")
   :commands lsp
