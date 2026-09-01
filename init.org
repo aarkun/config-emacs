@@ -454,6 +454,13 @@ Install [[https://github.com/jschaf/powershell.el][PowerShell Mode]]:
   (use-package powershell)
 #+end_src
 
+** Use UV Mode for Emacs
+[[https://github.com/astral-sh/uv][uv]] is used to manage Python installations for projects. To respect the current environment, [[https://github.com/z80dev/uv-mode][UV Mode for Emacs]] is installed and enabled for [[https://melpa.org/#/python-mode][python-mode]]:
+#+begin_src emacs-lisp
+  (use-package uv-mode
+    :hook (python-mode . uv-mode-auto-activate-hook))
+#+end_src
+
 ** Use Robot
 Install [[https://github.com/kopoli/robot-mode][robot-mode.el]]:
 #+begin_src emacs-lisp

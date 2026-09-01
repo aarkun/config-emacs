@@ -130,6 +130,8 @@
   (plantuml-jar-path "~/opt/plantuml.jar")
   :config (setq plantuml-output-type "png"))
 (use-package powershell)
+(use-package uv-mode
+  :hook (python-mode . uv-mode-auto-activate-hook))
 (use-package robot-mode)
 (use-package yaml-mode)
 (use-package lsp-mode
