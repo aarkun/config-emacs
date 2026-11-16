@@ -58,6 +58,8 @@
   ([remap describe-command] . helpful-command)
   ([remap describe-key] . helpful-key)
   ("C-h C-x d" . helpful-at-point))
+(use-package ace-window
+  :bind ("M-o" . ace-window))
 (use-package projectile
   :config (projectile-mode t)
   :bind-keymap ("C-c p" . projectile-command-map)

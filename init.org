@@ -197,6 +197,13 @@ Install [[https://github.com/Wilfred/helpful][Helpful]] to enhance Emacs help wi
     ("C-h C-x d" . helpful-at-point))
 #+end_src
 
+* Use ace-window
+Install [[https://github.com/abo-abo/ace-window][ace-window]] and bind it to the suggested key /M-o/:
+#+begin_src emacs-lisp
+  (use-package ace-window
+    :bind ("M-o" . ace-window))
+#+end_src
+
 * Use Projectile
 Install [[https://github.com/bbatsov/projectile][Projectile]] and set the key prefix for Projectile commands to /C-c p/. All commands are bound to keys, so the entry in the mode-line can be hidden:
 #+begin_src emacs-lisp
