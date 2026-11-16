@@ -79,8 +79,8 @@ Make the cursor green:
 Define the package archives to use:
 #+begin_src emacs-lisp
   (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-			   ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-			   ("melpa" . "https://melpa.org/packages/")))
+  			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+  			 ("melpa" . "https://melpa.org/packages/")))
 #+end_src
 
 Initialize package variables:
@@ -319,9 +319,9 @@ Install [[https://codeberg.org/rch/go-template-helper-mode][go-template-helper-m
 #+begin_src emacs-lisp
   (defun alk/go-template-helper-mode-enable()
     (when (and buffer-file-name
-	       (string-match-p
-		(rx "/templates/" (* any) "." (or "yaml") eos)
-		buffer-file-name))
+  	     (string-match-p
+  	      (rx "/templates/" (* any) "." (or "yaml") eos)
+  	      buffer-file-name))
       (go-template-helper-mode 1)))
 
   (use-package go-template-helper-mode
@@ -421,7 +421,7 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     :config
     (let ((filename org-agenda-files))
       (if (not (file-exists-p filename))
-	  (make-empty-file filename)))
+  	(make-empty-file filename)))
     :hook (org-mode . turn-on-visual-line-mode))
 #+end_src
 
