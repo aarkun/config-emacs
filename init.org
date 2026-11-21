@@ -104,8 +104,9 @@ Initialise use-package:
 #+end_src
 
 ** Configure use-package
-1. Ensure newly installed packages are downloaded and installed properly before running.
-2. Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-keyring-update]] to keep GPG keyring or GNU ELPA up to date and keep the default behavior.
+1. Ensure newly installed packages are downloaded and installed properly before running, by customize setting ~use-package-always-ensure~.
+2. Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-keyring-update]] to keep GPG keyring of GNU ELPA up to date. The default should be to check signatures, if they are present, by setting ~package-check-signature~.
+
 #+begin_src emacs-lisp
   (use-package gnu-elpa-keyring-update
     :custom
@@ -113,7 +114,7 @@ Initialise use-package:
     (package-check-signature 'allow-unsigned))
 #+end_src
 
-*Note*: If gnu-elpa-keyring-update cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
+*Note*: In a fresh environment, the keys already are too old, so that the installation of gnu-elpa-keyring-update will fail. If gnu-elpa-keyring-update cannot be installed, because of expired signatures, the signature check must be temporary disabled, for installing gnu-elpa-keyring-update, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
 #+begin_src emacs-lisp :tangle no
   (setq package-check-signature nil)
 #+end_src
