@@ -89,7 +89,6 @@
 (use-package adoc-mode)
 (use-package bats-mode)
 (use-package csv-mode)
-(use-package docker-compose-mode)
 (use-package dockerfile-mode)
 (use-package gnuplot)
 (use-package go-mode)

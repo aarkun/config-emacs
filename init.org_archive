@@ -1,0 +1,18 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/kunde/work/config-emacs/init.org
+
+
+* Use docker-compose-mode
+:PROPERTIES:
+:ARCHIVE_TIME: 2026-11-21 Sa 12:44
+:ARCHIVE_FILE: ~/work/config-emacs/init.org
+:ARCHIVE_OLPATH: Editing modes
+:ARCHIVE_CATEGORY: init
+:END:
+The [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]] is archived and no longer available on MELPA:
+#+begin_src emacs-lisp
+  (use-package docker-compose-mode)
+#+end_src
+
