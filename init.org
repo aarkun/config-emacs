@@ -139,7 +139,7 @@ The [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Revert.html
 #+end_src
 
 * Customize EasyPG
-Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html][EasyPG]], like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
+Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html][EasyPG]], like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. The passphrase shall be asked typed in the minibuffer:
 #+begin_src emacs-lisp
   (use-package epg
     :custom (epg-pinentry-mode 'loopback))
